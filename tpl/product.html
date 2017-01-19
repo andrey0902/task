@@ -1,0 +1,142 @@
+<div class="row" ng-controller="productCtrl as productCtrl">
+    <div class="col-md-5 col-sm-12">
+        <div class="panel panel-default">
+            <div class="panel panel-heading">
+                <h2 ng-bind="productCtrl.product.title"
+                    class="text-center">
+                </h2>
+            </div>
+            <div class="palen panel-body">
+                <p >
+                    product ranking: *****
+                </p>
+                <div>
+                    <img src="{{productCtrl.product.img.img_0}}"
+                         alt="product"
+                         class="img-responsive">
+                    <hr>
+                    <p ng-bind="productCtrl.product.description">
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-offset-1 col-md-5 col-sm-12">
+        <div class="row"
+             id="my_tab">
+            <div class=" tabs main_container">
+                <ul class="nav nav-justifid nav-tabs"
+                    id="my-tabs"
+                    role="tabs">
+
+                    <li class="active">
+                        <a href="/#!/main/#bat-1"
+                           data-toggle="tab">
+                            specification
+                        </a>
+                    </li>
+                    <li >
+                        <a href="/#!/main/#bat-2"
+                           data-toggle="tab">
+                            reviews
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="tab-content">
+                <div class="tab-pane fade in active "
+                     id="bat-1">
+                    <br>
+                    <p ng-bind="productCtrl.product.text"
+                       class="lead bg-info text-justify text_product">
+                    </p>
+                </div>
+                <div class="tab-pane fade"
+                     id="bat-2">
+                    <div class="row">
+                        <div class="review col-md-12">
+                           <div class="row ">
+                               <div class="col-md-4 rate_product">
+                                       Rate This product:
+                               </div>
+                               <div class="col-md-8"
+                                    id="rating_1">
+                                       <input type="hidden"
+                                              name="vote-id"
+                                              value="1"/>
+                               </div>
+                           </div>
+                            <form name="comentsForm"
+                                  class="form-horizontal"
+                                  novalidate
+                                  ng-submit="productCtrl.inquiry(productCtrl.user, comentsForm.$valid)">
+                            <div class="form-group">
+                                <label for="coment"
+                                       class="control-label col-md-4">
+                                    Write your comment
+                                </label>
+                                <div class="col-md-8">
+                                    <input type="text"
+                                           name="coments"
+                                           ng-required="requiredValue"
+                                           ng-minlength="productCtrl.minValue"
+                                           ng-maxlength="productCtrl.maxValue"
+                                           class="form-control"
+                                           id="coment"
+                                           ng-model="productCtrl.user.coment"
+                                           placeholder="Enter your text...">
+                                </div>
+                            </div>
+                            <div class="form-group has-error"
+                                 ng-if="productCtrl.showError">
+                                 <div class="col-md-offset-4 col-md-8">
+                                     {{productCtrl.getError(comentsForm.coments.$error)}}
+                                 </div>
+                            </div>
+                                <div class="form-group">
+                                    <div class="col-md-offset-4 col-md-4">
+                                        <button class="btn btn-success"
+                                                type="submit">
+                                            Send
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <h3 class="text-center">
+                                            Reviews
+                                        </h3>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-10 panel panel-default"
+                                         ng-repeat="item in productCtrl.reviews"
+                                    id="reviews_block">
+                                        <p>
+                                            Date: {{item.date}}
+                                        </p>
+                                        <p>
+                                            Comment: {{item.recall}}
+                                        </p>
+                                        <p>
+                                            Rate: {{item.range}}
+                                        </p>
+                                    </div>
+                                </div>
+
+                            </div>
+
+
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
