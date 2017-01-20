@@ -1,13 +1,15 @@
-App.controller('productCtrl',function (goodsFactory,reviewsFactory,$location) {
-
-
-        var part=$location.path();
-        part=+part.split('/')[2];
+App.controller('productCtrl',function (goodsFactory,reviewsFactory,$location,$rootScope) {
+        var part = $location.path();
+        var self = this;
+        part = part.split('/')[2];
         this.product = goodsFactory.getProduct(part);
-        this.reviews=reviewsFactory.getRecall(""+part);
-        this.minValue=3;
-        this.maxlength=200;
-        this.access= undefined;
+        this.minValue = 3;
+        this.maxValue = 200;
+        this.access = undefined;
+        this.reviews=reviewsFactory.getRecall(part);
+        $rootScope.$on('reviews:updated', function() {
+            self.reviews=reviewsFactory.getRecall(part);
+        });
 
         !function () {
             $('#my-tabs a').click(function (e) {
@@ -25,7 +27,8 @@ App.controller('productCtrl',function (goodsFactory,reviewsFactory,$location) {
 
                 this.vote_success.fadeOut(2000);
             }
-        });});
+        });
+    });
         this.inquiry=function (data,isValid) {
             if(this.access!==undefined){
                 if(isValid){
@@ -51,11 +54,6 @@ App.controller('productCtrl',function (goodsFactory,reviewsFactory,$location) {
                 }
             }
         };
-
-
-    console.log('productCtrl')
-
-
 
 });
 

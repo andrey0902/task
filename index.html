@@ -2,7 +2,6 @@
 <html ng-app="App">
 
 <head>
-  <!--  <base href="/">-->
 <meta charset="utf-8" >
 <title> </title>
 
@@ -13,7 +12,6 @@
     <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.css">
     <link rel="stylesheet" href="css/dopstyle.css">
     <script src="./node_modules/angular/angular.js"></script>
-
     <script src="./node_modules/angular-route/angular-route.js"></script>
     <script type="text/javascript" src="./node_modules/angular-resource/angular-resource.min.js"></script>
     <script src="./node_modules/bootstrap/dist/js/bootstrap.js"></script>
@@ -22,59 +20,28 @@
     <script src="js/factory/reviews.js"></script>
     <script src="js/controllers/mainController.js"></script>
     <script src="js/controllers/productCtrl.js"></script>
-
-
-
-
-
-   <!-- <script src="js/directive/actionAfteNgRepeat.js"></script>
-    <script src="js/directive/modalShow.js"></script>
-    <script src="js/directive/admin.js"></script>
-    <script src="js/controllers/appController.js"></script>
-    <script src="js/controllers/mainController.js"></script>
-    <script src="./js/controllers/createCtrl.js"></script>
-    <script src="./js/controllers/editCtrl.js"></script>
-    <script src="./js/controllers/previewCtrl.js"></script>
-    <script src="./js/controllers/inVorck.js"></script>
-    <script src="./js/controllers/fixedCtrl.js"></script>
-    <script src="./js/controllers/statistic.js"></script>
-    <script src="./js/controllers/adminCtrl/adminCtrl.js"></script>
-    <script src="./js/controllers/adminCtrl/adminMainCtrl.js"></script>
-    <script src="./js/controllers/adminCtrl/adminUserCtrl.js"></script>-->
     <script src="js/router/routerModul.js"></script>
-
-
 </head>
 
 <body >
 
-    <div class="container-fluid" ng-controller="goodsCtrl as goodsCtrl" >
+    <div class="container-fluid"
+         ng-controller="goodsCtrl as goodsCtrl" >
         <div class="row  head-block" >
-
         </div>
         <div class="row head-block_2">
             <div class="col-sm-offset-2 col-sm-4 logo">
-                <a href="#!/"><img src="img/BA_new_icon.png" alt=""></a>
-            </div>
-            <div class="col-sm-offset-0 col-sm-2 ">
-                <a href="#!/"><img  class="back-logo" src="img/logo.gif" alt=""></a>
+                <a href="#!/">
+                    <img src="img/logo.gif"
+                         alt="">
+                </a>
             </div>
         </div>
-
-
         <div ng-view></div>
-
-
         <div class="row  bottom">
         </div>
         <footer class="row  footer-block">
         </footer>
-
-
     </div>
-
-
-
 </body>
-
 </html>

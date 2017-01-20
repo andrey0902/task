@@ -1,16 +1,17 @@
+ App.controller('goodsCtrl',function (goodsFactory,$rootScope) {
+     var self=this;
+     $rootScope.$on('goods:updated', function() {
+         self.goods=goodsFactory.getGoods();
+     });
+     this.goods=goodsFactory.getGoods();
+         this.preview=function(item){
+         this.product=item;
 
-         App.controller('goodsCtrl',function (goodsFactory) {
-
-             this.goods=goodsFactory.getGoods();
-             this.preview=function(item){
-                 this.product=item;
-                 console.log(this.product);
-             };
-             this.data='';
-             console.log('sort',  this.data)
-             console.log('goodsCtrl')
+     };
+     this.data='';
 
 
 
-             });
+
+});
 

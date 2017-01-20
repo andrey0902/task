@@ -1,3 +1,6 @@
+.content_bloc{
+  height:600px;
+}
 .rate_product{
   padding-top: 10px;
   padding-left: 60px;
@@ -22,15 +25,18 @@ p.text_product,.review{
   white-space: nowrap;
   text-overflow: ellipsis;
 }
-.thumbnail{
-  background-color: #e7e7e7;
-}
 
 .preview{
-  background-color: #e7e7e7;
-  width: 40%;
+  width: 50%;
+  opacity: 0.5;
+  -webkit-transition:  0.3s ease 0.3s;
+  -moz-transition:  0.3s ease 0.3s;
+  -o-transition:  0.3s ease 0.3s;
+  transition:  0.3s ease 0.3s;
 }
-
+.preview:hover{
+  opacity: 1;
+}
 [ng\:cloak],[ng-cloak],.ng-cloak{
   display:none;
 }
@@ -40,12 +46,8 @@ p.text_product,.review{
 .badge-color_ful{
   background-color: #4fd654;
 }
-.save_post{
-  margin-left: 14%;
-}
-.checkbox_save{
-  display:none ;
-}
+
+
 #description{
   max-width: 600px;
 }
@@ -59,7 +61,6 @@ div.add_post{
 
 form .ng-pristine{
   border: 1px dotted gray;
-  /*background-color: aqua;*/
 }
 form .ng-invalid-required.ng-dirty ,form .ng-touched.ng-empty{
   background-color: bisque;
@@ -80,40 +81,27 @@ button{
   color: lightsalmon;
 }
 
-.reg_dop{
-  padding-top: 20px;
 
-}
 .has-error{
   margin-top: 10px;
-  /*height:10px;*/
   color: #ff2e52;
 }
 .head-block,.footer-block{
-  margin-top: 0px;
+  margin-top: 0;
   height: 40px;
 background-color: #002b48;
 }
+
+
 .head-block_2{
   height: 80px;
   background: url('../img/header.png') repeat;
   border-bottom: 1px solid #eee;
 }
-.col-md-1{
-  border: 1px solid black;
 
-}
 .logo{
   padding-top: 5px;
 }
-.back-logo{
-  padding-left: 80px;
-  padding-top: 10px;
-  height: 67px;
-  opacity: 0.7;
-}
-
-
 
 div.vote-wrap{
   height: 36px;

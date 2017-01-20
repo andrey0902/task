@@ -1,25 +1,37 @@
 <div class="row">
     <div class="col-md-2">
         <div class="form-group">
-            <label for="title" class="control-label col-md-6">Sort by:</label>
-
-                <select name="titl" class="form-control" id="title" required ng-model="goodsCtrl.data">
-                    <option value="tabs">Samsung</option>
-                    <option value="iPad">Apple</option>
-                    <option value="">All</option>
+            <label for="title"
+                   class="control-label col-md-6">Sort by:</label>
+                <select name="titl"
+                        class="form-control"
+                        id="title"
+                        required
+                        ng-model="goodsCtrl.data">
+                    <option value="tabs">
+                        Samsung
+                    </option>
+                    <option value="iPad">
+                        Apple
+                    </option>
+                    <option value="">
+                        All
+                    </option>
                 </select>
-
         </div>
     </div>
-    <div class="col-md-offset-0 test col-md-9">
-        <div class="row"
+    <div class=" col-md-9">
+        <div class="row content_bloc"
              ng-cloak>
-
-                    <div class="col-md-3 col-sm-6" ng-repeat-start="item in goodsCtrl.goods |filter:{category:goodsCtrl.data}">
+                    <div class="col-md-3 col-sm-6"
+                         ng-repeat-start="item in goodsCtrl.goods |filter:{category:goodsCtrl.data}">
                         <div class="thumbnail">
-                            <img src="{{item.img.img_0}}"
-                                 alt="goods"
-                                 class="preview">
+                            <a href="#!/more/{{item.id}}"
+                               class="block">
+                                <img src="{{item.img}}"
+                                     alt="goods"
+                                     class="preview">
+                                </a>
                             <div class="caption text-center">
                                 <h3>
                                     {{item.title}}
@@ -37,17 +49,10 @@
                             </div>
                         </div>
                     </div>
-
-
-                <div ng-if="(($index+1)%4==0&&$index!==0)?true:false;" class="clearfix"></div>
-                <span ng-repeat-end></span>
-
-
+                <div ng-if="(($index+1)%4==0&&$index!==0)?true:false;"
+                     class="clearfix"></div>
+                <span ng-repeat-end>
+                </span>
         </div>
-
         </div>
-
-
-
-
 </div>
